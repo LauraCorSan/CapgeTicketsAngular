@@ -11,11 +11,12 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { DeleteDialogComponent } from './components/delete-dialog/delete-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { EventoServiceService } from './service/evento-service.service';
+import { DetalleEventosComponent } from './detalle-eventos/detalle-eventos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListarEventosComponent, DeleteDialogComponent, 
+    ListarEventosComponent, DeleteDialogComponent, DetalleEventosComponent, 
   ],
   imports: [
     BrowserModule,
