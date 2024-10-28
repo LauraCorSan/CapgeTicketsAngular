@@ -56,6 +56,9 @@ export class ListarEventosComponent implements OnInit {
       }
     });
   }
+  navigateToModificar(id: number): void {
+    this.router.navigate(['/evento/modificar', id]);
+  }
 
   showSnackBar(message: string): void {
     this.snackBar.open(message, 'Cerrar', {

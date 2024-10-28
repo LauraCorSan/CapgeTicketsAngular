@@ -26,4 +26,12 @@ export class EventoServiceService {
   public getDetalleEvento(id: number): Observable<Evento> {
     return this.httpClient.get<Evento>(this.url + id);
   }
+
+  public getEvento(id: number): Observable<Evento> {
+    return this.httpClient.get<Evento>(`${this.url}${id}`);
+  }
+
+  public updateEvento(evento: Evento): Observable<Evento> {
+    return this.httpClient.put<Evento>(`${this.url}${evento.id}`, evento);
+  }
 }

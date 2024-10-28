@@ -9,11 +9,17 @@ const routes: Routes = [
   { path: 'listarEventos', component: ListarEventosComponent },
 
   { path: '', redirectTo: '/listarEventos', pathMatch: 'full' },
+  { path: '', redirectTo: "/listarEventos", pathMatch: 'full' },
+  { path: 'evento/modificar/:id', component: ModificarEventoComponent},
   { path: 'detalle-evento/:id', component: VerDetallesEventoComponent },
 
   {
     path: 'add',
     component: DarAltaEventoComponent,
+  },
+  {
+    path: 'update',
+    component: ModificarEventoComponent,
   },
 ];
 

@@ -19,9 +19,9 @@
       <td>{{item.nombre}}</td>
       <td>{{item.descripcion}}</td>
       <td>
-        <button type="button" class="btn btn-warning btn-sm">
+        <button type="button" class="btn btn-warning btn-sm" (click)="navigateToModificar(item.id)" >
           <i class="fa fa-pencil"></i>
-        </button>
+      </button>
         &nbsp;
         <a [routerLink]="['/detalle-evento', item.id]" class="btn btn-primary btn-sm">
           <i class="fa fa-eye"></i>
