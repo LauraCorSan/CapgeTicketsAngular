@@ -21,4 +21,8 @@ export class EventoServiceService {
       return this.httpClient.delete<any>(this.url + 'eliminar/' + evento.id);
     }
 
+    getDetalleEvento(id: number): Observable<Evento> {
+      return this.httpClient.get<Evento>(this.url + id); // Cambia 'detalle/' por ''.
+  }
+  
 }
