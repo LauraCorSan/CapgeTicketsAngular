@@ -1,10 +1,10 @@
 <div class="container mt-4">
   <h2>Dar de Alta un Evento</h2>
   <form [formGroup]="eventoForm" (ngSubmit)="onSubmit()">
-    
+   
     <!-- Nombre -->
     <div class="form-group mb-3">
-      <label for="nombre">Nombre del Evento</label>
+      <label for="nombre">Nombre del Evento <i class="icon">🎤</i></label>
       <input
         type="text"
         id="nombre"
@@ -18,10 +18,10 @@
         El nombre es obligatorio.
       </div>
     </div>
-    
+   
     <!-- Descripción -->
     <div class="form-group mb-3">
-      <label for="descripcion">Descripción</label>
+      <label for="descripcion">Descripción <i class="icon">📝</i></label>
       <textarea
         id="descripcion"
         formControlName="descripcion"
@@ -34,10 +34,10 @@
         La descripción es obligatoria.
       </div>
     </div>
-    
+   
     <!-- Género -->
     <div class="form-group mb-3">
-      <label for="genero">Género</label>
+      <label for="genero">Género <i class="icon">🎭</i></label>
       <input
         type="text"
         id="genero"
@@ -51,10 +51,10 @@
         El género es obligatorio.
       </div>
     </div>
-    
+   
     <!-- Fecha del Evento -->
     <div class="form-group mb-3">
-      <label for="fechaEvento">Fecha y Hora del Evento</label>
+      <label for="fechaEvento">Fecha y Hora del Evento <i class="icon">📅</i></label>
       <input
         type="datetime-local"
         id="fechaEvento"
@@ -67,10 +67,10 @@
         La fecha y hora deben ser futuras.
       </div>
     </div>
-    
+   
     <!-- Precio Mínimo -->
     <div class="form-group mb-3">
-      <label for="precioMin">Precio Mínimo</label>
+      <label for="precioMin">Precio Mínimo <i class="icon">💲</i></label>
       <input
         type="number"
         id="precioMin"
@@ -85,28 +85,34 @@
         El precio mínimo debe ser positivo.
       </div>
     </div>
-    
+   
     <!-- Precio Máximo -->
     <div class="form-group mb-3">
-      <label for="precioMax">Precio Máximo</label>
+      <label for="precioMax">Precio Máximo <i class="icon">💲</i></label>
       <input
-        type="number"
-        id="precioMax"
-        formControlName="precioMax"
-        class="form-control"
-        [ngClass]="{'is-invalid': isInvalid('precioMax')}"
-        placeholder="Introduce el precio máximo"
-        min="0.01"
-        required
-      />
-      <div *ngIf="isInvalid('precioMax')" class="invalid-feedback">
-        El precio máximo debe ser positivo.
-      </div>
+    type="number"
+    id="precioMax"
+    formControlName="precioMax"
+    class="form-control"
+    [ngClass]="{
+      'is-invalid': isInvalid('precioMax') || isPrecioMaxInvalid()
+    }"
+    placeholder="Introduce el precio máximo"
+    min="0.01"
+    required
+    (blur)="verificarPrecioMax()"
+  />
+  <div *ngIf="isInvalid('precioMax')" class="invalid-feedback">
+    El precio máximo debe ser positivo.
+  </div>
+  <div *ngIf="isPrecioMaxInvalid()" class="invalid-feedback">
+    {{ getPrecioErrorMessage() }}
+  </div>
     </div>
-    
+   
     <!-- Localidad -->
     <div class="form-group mb-3">
-      <label for="localidad">Localidad</label>
+      <label for="localidad">Localidad <i class="icon">📍</i></label>
       <input
         type="text"
         id="localidad"
@@ -120,10 +126,10 @@
         La localidad es obligatoria.
       </div>
     </div>
-    
+   
     <!-- Recinto -->
     <div class="form-group mb-3">
-      <label for="recinto">Recinto</label>
+      <label for="recinto">Recinto <i class="icon">🏟️</i></label>
       <input
         type="text"
         id="recinto"
@@ -137,14 +143,13 @@
         El recinto es obligatorio.
       </div>
     </div>
-    
-    <!-- Botones -->
-    <div class="form-group mb-3 d-flex justify-content-between">
-      <button type="submit" class="btn btn-primary" [disabled]="eventoForm.invalid">
-        Guardar Evento
-      </button>
-      <button type="button" class="btn btn-secondary" (click)="volver()">
-        Volver a Lista de Eventos
-      </button>
-    </div>
+   
+    <!-- Botón de Enviar -->
+    <button type="submit" class="btn btn-primary" [disabled]="eventoForm.invalid">
+      Guardar Evento
+    </button>
+    <button type="button" class="btn btn-secondary" (click)="volver()">
+      Volver a Lista de Eventos
+    </button>
   </form>
+</div>  

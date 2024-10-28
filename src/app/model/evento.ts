@@ -3,7 +3,7 @@ export class Evento {
   nombre: string;
   descripcion: string;
   genero: string;
-  fechaEvento: Date;
+  fechaEvento: string;
   precioMin: number;
   precioMax: number;
   localidad: string;
@@ -13,7 +13,7 @@ export class Evento {
     nombre: string,
     descripcion: string,
     genero: string,
-    fechaEvento: Date,
+    fechaEvento: string,
     precioMin: number,
     precioMax: number,
     localidad: string,
@@ -23,7 +23,7 @@ export class Evento {
     this.nombre = nombre;
     this.descripcion = descripcion;
     this.genero = genero;
-    this.fechaEvento = new Date(fechaEvento)
+    this.fechaEvento = fechaEvento
     this.precioMin = precioMin;
     this.precioMax = precioMax;
     this.localidad = localidad;
