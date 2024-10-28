@@ -58,6 +58,7 @@
       <input
         type="datetime-local"
         id="fechaEvento"
+        [attr.min]="minFecha"
         formControlName="fechaEvento"
         class="form-control"
         [ngClass]="{'is-invalid': isInvalid('fechaEvento')}"

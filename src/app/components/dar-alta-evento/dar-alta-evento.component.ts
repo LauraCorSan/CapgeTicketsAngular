@@ -10,7 +10,8 @@ import { EventoServiceService } from '../../service/evento-service.service';
   styleUrls: ['./dar-alta-evento.component.scss']
 })
 export class DarAltaEventoComponent implements OnInit {
-  eventoForm: FormGroup;
+  eventoForm: FormGroup; 
+  minFecha!: string; 
  
   constructor(
     private fb: FormBuilder,
@@ -35,7 +36,11 @@ export class DarAltaEventoComponent implements OnInit {
     );
   }
  
-  ngOnInit(): void {}
+  ngOnInit(): void {const today = new Date();
+    const anio = today.getFullYear();
+    const mes = (today.getMonth() + 1).toString().padStart(2, '0');
+    const dia = today.getDate().toString().padStart(2, '0');
+    this.minFecha = `${anio}-${mes}-${dia}`;}
  
   precioValidator(form: AbstractControl): ValidationErrors | null {
     const precioMin = form.get('precioMin')?.value;
