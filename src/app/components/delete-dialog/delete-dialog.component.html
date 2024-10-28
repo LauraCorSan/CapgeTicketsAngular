@@ -1,8 +1,9 @@
-<h2 mat-dialog-title>Confirmar Eliminación</h2>
-<mat-dialog-content>
+<h2 mat-dialog-title class="dialog-title">Confirmar Eliminación</h2>
+<mat-dialog-content class="dialog-content">
   <p>¿Estás seguro de que deseas eliminar este evento?</p>
 </mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-button (click)="onCancel()">Cancelar</button>
-  <button mat-button (click)="onConfirm()" color="warn">Eliminar</button>
+<mat-dialog-actions class="dialog-actions">
+  <button mat-button (click)="onCancel()" class="cancel-button">Cancelar</button>
+  <button mat-button (click)="onConfirm()" class="confirm-button">Eliminar</button>
 </mat-dialog-actions>
+

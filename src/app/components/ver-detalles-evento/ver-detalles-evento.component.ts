@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Evento } from '../../model/evento';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { EventoServiceService } from '../../service/evento-service.service';
 
 @Component({
@@ -12,7 +13,8 @@ export class VerDetallesEventoComponent {
   eventoDetalles!: Evento;
   constructor(
     private eventoService: EventoServiceService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
   ngOnInit(): void {
     const id = +this.route.snapshot.paramMap.get('id')!;
@@ -27,5 +29,9 @@ export class VerDetallesEventoComponent {
         console.error('Error al obtener detalles del evento', error);
       }
     );
+  }
+
+  volver(): void {
+    this.router.navigate(['/listarEventos']);
   }
 }

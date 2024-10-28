@@ -1,50 +1,36 @@
-<div class="col-md-12 p-2">
-    <button type="button" class="btn btn-primary btn-sm" [routerLink]="['/add']">
-        <i class="fa fa-save"></i> Nuevo evento
-      </button>
-     
-          <table class="table mt-2 table-bordered">
-        <thead class="table-primary">
-          <tr>
-            <th>ID</th>
-            <th>Evento</th>
-            <th>Descripción</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let item of eventos">
-            <td>{{item.id}}</td>
-            <td>{{item.nombre}}</td>
-            <td>{{item.descripcion}}</td>
-  
-            <td>
-                <button type="button" class="btn btn-warning btn-sm" >
-                    <i class="fa fa-pencil"></i>
-                </button>
-                &nbsp;
-                <a [routerLink]="['/detalle-evento', item.id]" class="btn btn-primary btn-sm">
-                  <i class="fa fa-eye"></i> 
-                </a>
-                &nbsp;
-
-        <td>
-          <!-- Enlace para ver detalles -->
-          <a [routerLink]="['/detalle-evento', item.id]" class="btn btn-primary btn-sm">
-            <i class="fa fa-eye"></i> 
-          </a>
-          
-          &nbsp;
-          <!-- Botón para editar -->
-          <button type="button" class="btn btn-warning btn-sm">
-            <i class="fa fa-pencil"></i>
-          </button>
-          &nbsp;
-          <!-- Botón para eliminar -->
-          <button type="button" class="btn btn-danger btn-sm" (click)="deleteEvento(item)">
-            <i class="fa fa-trash"></i>
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<div class="col-md-12 p-2 d-flex justify-content-end">
+  <button type="button" class="btn btn-primary btn-sm" [routerLink]="['/add']">
+      <i class="fa fa-save"></i> Nuevo evento
+  </button>
 </div>
+
+<table class="table mt-2 table-bordered">
+  <thead class="table-primary">
+    <tr>
+      <th>ID</th>
+      <th>Evento</th>
+      <th>Descripción</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of eventos">
+      <td>{{item.id}}</td>
+      <td>{{item.nombre}}</td>
+      <td>{{item.descripcion}}</td>
+      <td>
+        <button type="button" class="btn btn-warning btn-sm">
+          <i class="fa fa-pencil"></i>
+        </button>
+        &nbsp;
+        <a [routerLink]="['/detalle-evento', item.id]" class="btn btn-primary btn-sm">
+          <i class="fa fa-eye"></i>
+        </a>
+        &nbsp;
+        <button type="button" class="btn btn-danger btn-sm" (click)="deleteEvento(item)">
+          <i class="fa fa-trash"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

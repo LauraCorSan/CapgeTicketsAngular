@@ -1,15 +1,16 @@
 <div class="evento-contenedor" *ngIf="eventoDetalles">
-    <div>
-        
-      <h2>Detalles del Evento</h2>
-      <p>Nombre: {{ eventoDetalles.nombre }}</p>
-      <p>Fecha: {{ eventoDetalles.fechaEvento}}</p>
-      <p>Descripción: {{ eventoDetalles.descripcion }}</p>
-      <p>Género: {{ eventoDetalles.genero }}</p>
-      <p>Precio mínimo: {{ eventoDetalles.precioMin }}</p>
-      <p>Precio máximo: {{ eventoDetalles.precioMax }}</p>
-      <p>Localidad: {{ eventoDetalles.localidad }}</p>
-      <p>Recinto: {{ eventoDetalles.recinto }}</p>
-    </div>
+  <div class="evento-detalles">
+      <h2>Detalles del Evento: {{ eventoDetalles.id }}</h2>
+      <p><strong>Nombre:</strong> {{ eventoDetalles.nombre }}</p>
+      <p><strong>Fecha:</strong> {{ eventoDetalles.fechaEvento }}</p>
+      <p><strong>Descripción:</strong> {{ eventoDetalles.descripcion }}</p>
+      <p><strong>Género:</strong> {{ eventoDetalles.genero }}</p>
+      <p><strong>Precio mínimo:</strong> {{ eventoDetalles.precioMin }}</p>
+      <p><strong>Precio máximo:</strong> {{ eventoDetalles.precioMax }}</p>
+      <p><strong>Localidad:</strong> {{ eventoDetalles.localidad }}</p>
+      <p><strong>Recinto:</strong> {{ eventoDetalles.recinto }}</p>
+      <button (click)="volver()" class="btn btn-secondary mt-3">Volver a lista de Eventos</button>
   </div>
+</div>
+
   

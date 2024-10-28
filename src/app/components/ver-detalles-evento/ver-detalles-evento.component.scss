@@ -4,5 +4,27 @@
     align-items: flex-start; 
     min-height: 100vh; 
     padding-top: 20px; 
+    background-color: #f9f9f9; /* Fondo suave */
 }
+
+.evento-detalles {
+    background-color: #fff; /* Fondo blanco para el contenedor */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    padding: 20px; /* Espaciado interno */
+    max-width: 600px; /* Ancho máximo */
+    width: 100%; /* Ancho completo en pantallas pequeñas */
+}
+
+h2 {
+    color: #333; /* Color del encabezado */
+    margin-bottom: 15px; /* Espaciado inferior */
+}
+
+p {
+    font-size: 16px; /* Tamaño de fuente */
+    margin: 5px 0; /* Espaciado superior e inferior */
+    color: #555; /* Color del texto */
+}
+
 

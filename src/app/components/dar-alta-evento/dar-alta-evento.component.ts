@@ -65,4 +65,8 @@ export class DarAltaEventoComponent implements OnInit {
     const control = this.eventoForm.get(campo);
     return control?.invalid && (control?.dirty || control?.touched);
   }
+
+  volver(): void {
+    this.router.navigate(['/listarEventos']);
+  }
 }
