@@ -3,7 +3,7 @@
 
 <div class="container mt-5">
     <h2>Modificar Evento</h2>
-    <form [formGroup]="eventoForm" (ngSubmit)="onSave()">
+    <form [formGroup]="eventoForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" formControlName="nombre" class="form-control" />
