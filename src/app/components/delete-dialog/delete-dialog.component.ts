@@ -9,7 +9,7 @@ import { MatDialogRef, MatDialog, MatDialogModule } from '@angular/material/dial
 export class DeleteDialogComponent {
   constructor(public dialogRef: MatDialogRef<DeleteDialogComponent>) {}
 
-  onNoClick(): void {
+  onCancel(): void {
     this.dialogRef.close(false); 
   }
 

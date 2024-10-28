@@ -10,7 +10,7 @@ import { RouterOutlet } from '@angular/router';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { DeleteDialogComponent } from './components/delete-dialog/delete-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { EventoServiceService } from './evento-service.service';
+import { EventoServiceService } from './service/evento-service.service';
 
 @NgModule({
   declarations: [
