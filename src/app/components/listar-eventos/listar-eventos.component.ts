@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Evento } from '../../model/evento';
-import { EventoServiceService } from '../../service/evento-service.service';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component';
 import { MessageDeleted } from '../../model/message-deleted';
+import { EventoServiceService } from '../../service/evento-service.service';
 
 @Component({
   selector: 'app-listar-eventos',
@@ -36,6 +36,7 @@ export class ListarEventosComponent implements OnInit {
 
   deleteEvento(evento: Evento): void {
     const dialogRef = this.dialog.open(DeleteDialogComponent);
+
 
     dialogRef.afterClosed().subscribe((message: MessageDeleted) => {
       if (message) {

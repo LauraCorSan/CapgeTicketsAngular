@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DetalleEventosComponent } from './detalle-eventos.component';
+import { DarAltaEventoComponent } from './dar-alta-evento.component';
 
-describe('DetalleEventosComponent', () => {
-  let component: DetalleEventosComponent;
-  let fixture: ComponentFixture<DetalleEventosComponent>;
+describe('DarAltaEventoComponent', () => {
+  let component: DarAltaEventoComponent;
+  let fixture: ComponentFixture<DarAltaEventoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DetalleEventosComponent]
+      declarations: [DarAltaEventoComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(DetalleEventosComponent);
+    fixture = TestBed.createComponent(DarAltaEventoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
