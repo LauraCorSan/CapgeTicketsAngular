@@ -1,0 +1,43 @@
+
+
+
+<div class="container mt-5">
+    <h2>Modificar Evento</h2>
+    <form [formGroup]="eventoForm" (ngSubmit)="onSave()">
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" formControlName="nombre" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="descripcion">Descripción:</label>
+        <input type="text" id="descripcion" formControlName="descripcion" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="genero">Género:</label>
+        <input type="text" id="genero" formControlName="genero" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="fechaEvento">Fecha del Evento:</label>
+        <input type="date" id="fechaEvento" formControlName="fechaEvento" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="precioMin">Precio Mínimo:</label>
+        <input type="number" id="precioMin" formControlName="precioMin" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="precioMax">Precio Máximo:</label>
+        <input type="number" id="precioMax" formControlName="precioMax" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="localidad">Localidad:</label>
+        <input type="text" id="localidad" formControlName="localidad" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="recinto">Recinto:</label>
+        <input type="text" id="recinto" formControlName="recinto" class="form-control" />
+      </div>
+      <button type="submit" class="btn btn-primary mt-3" [disabled]="!eventoForm.valid">
+        Guardar Cambios
+      </button>
+    </form>
+  </div>
