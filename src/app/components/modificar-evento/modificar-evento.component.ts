@@ -7,11 +7,12 @@ import { Evento } from '../../model/evento';
 @Component({
   selector: 'app-modificar-evento',
   templateUrl: './modificar-evento.component.html',
-  styleUrls: ['./modificar-evento.component.scss'] // Asegúrate de que esto esté correctamente escrito
+  styleUrls: ['./modificar-evento.component.scss']
 })
 export class ModificarEventoComponent implements OnInit {
   eventoForm!: FormGroup;
   eventoId!: number;
+  minFecha!: string;  // Define minFecha para la restricción de fecha
   servicioEvento: any;
 
   constructor(
@@ -22,6 +23,13 @@ export class ModificarEventoComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    // Configurar el valor mínimo para el campo de fecha
+    const today = new Date();
+    const anio = today.getFullYear();
+    const mes = (today.getMonth() + 1).toString().padStart(2, '0');
+    const dia = today.getDate().toString().padStart(2, '0');
+    this.minFecha = `${anio}-${mes}-${dia}`; // Define minFecha en formato YYYY-MM-DD
+
     this.eventoId = +this.route.snapshot.paramMap.get('id')!;
     this.inicializarFormulario();
 
@@ -101,7 +109,6 @@ export class ModificarEventoComponent implements OnInit {
         console.log("Evento actualizado con éxito", response);
         this.router.navigate(['/']);
       },
-     
     );
   }
   
@@ -115,5 +122,4 @@ export class ModificarEventoComponent implements OnInit {
   
     return `${dia}-${mes}-${anio} ${horas}:${minutos}`;  // Retorna en formato 'YYYY-MM-DD'
   }
-  
 }
