@@ -1,8 +1,9 @@
 <div class="evento-contenedor" *ngIf="eventoDetalles">
     <div>
+        
       <h2>Detalles del Evento</h2>
       <p>Nombre: {{ eventoDetalles.nombre }}</p>
-      <p>Fecha: {{ eventoDetalles.fechaEvento | date }}</p>
+      <p>Fecha: {{ eventoDetalles.fechaEvento}}</p>
       <p>Descripción: {{ eventoDetalles.descripcion }}</p>
       <p>Género: {{ eventoDetalles.genero }}</p>
       <p>Precio mínimo: {{ eventoDetalles.precioMin }}</p>

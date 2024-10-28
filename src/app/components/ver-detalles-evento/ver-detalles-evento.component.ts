@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Evento } from '../../model/evento';
-import { EventoServiceService } from '../../evento-service.service';
 import { ActivatedRoute } from '@angular/router';
+import { EventoServiceService } from '../../service/evento-service.service';
 
 @Component({
   selector: 'app-ver-detalles-evento',

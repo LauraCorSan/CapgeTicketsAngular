@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { EventoServiceService } from '../../evento-service.service';
+import { EventoServiceService } from '../../service/evento-service.service';
 
 @Component({
   selector: 'app-dar-alta-evento',
@@ -62,9 +62,9 @@ export class DarAltaEventoComponent implements OnInit {
           alert('Evento creado exitosamente');
           this.router.navigate(['/listarEventos']);
         },
-        error: (err) => console.error('Error al crear el evento:', err)
       });
     }
+
   }
   
   isInvalid(campo: string): boolean | undefined  {
