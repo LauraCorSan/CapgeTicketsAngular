@@ -11,6 +11,7 @@ import { DeleteDialogComponent } from '../delete-dialog/delete-dialog.component'
   styleUrl: './listar-eventos.component.scss'
 })
 export class ListarEventosComponent implements OnInit{
+
   eventos: Evento[] = [];
  
   constructor(private router: Router, private eventoService: EventoServiceService,  private dialog: MatDialog) {}
@@ -43,6 +44,9 @@ export class ListarEventosComponent implements OnInit{
     });*/
 
     
+  }
+  navigateToModificar(id: number): void {
+    this.router.navigate(['/evento/modificar', id]);
   }
 
 }
