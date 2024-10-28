@@ -20,7 +20,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    ListarEventosComponent, DeleteDialogComponent, ModificarEventoComponent, DarAltaEventoComponent, VerDetallesEventoComponent, 
+    ListarEventosComponent, DeleteDialogComponent, 
   ],
   imports: [
     BrowserModule,

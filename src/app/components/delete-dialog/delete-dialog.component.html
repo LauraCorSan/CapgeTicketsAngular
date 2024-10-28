@@ -3,6 +3,6 @@
   <p>¿Estás seguro de que deseas eliminar este evento?</p>
 </mat-dialog-content>
 <mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">Cancelar</button>
-  <button mat-button color="warn" (click)="onConfirm()">Eliminar</button>
+  <button mat-button (click)="onCancel()">Cancelar</button>
+  <button mat-button (click)="onConfirm()" color="warn">Eliminar</button>
 </mat-dialog-actions>
