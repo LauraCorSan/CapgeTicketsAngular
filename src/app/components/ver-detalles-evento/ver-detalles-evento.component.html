@@ -1,0 +1,14 @@
+<div class="evento-contenedor" *ngIf="eventoDetalles">
+    <div>
+      <h2>Detalles del Evento</h2>
+      <p>Nombre: {{ eventoDetalles.nombre }}</p>
+      <p>Fecha: {{ eventoDetalles.fechaEvento | date }}</p>
+      <p>Descripción: {{ eventoDetalles.descripcion }}</p>
+      <p>Género: {{ eventoDetalles.genero }}</p>
+      <p>Precio mínimo: {{ eventoDetalles.precioMin }}</p>
+      <p>Precio máximo: {{ eventoDetalles.precioMax }}</p>
+      <p>Localidad: {{ eventoDetalles.localidad }}</p>
+      <p>Recinto: {{ eventoDetalles.recinto }}</p>
+    </div>
+  </div>
+  

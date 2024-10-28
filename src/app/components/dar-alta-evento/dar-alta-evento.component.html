@@ -1,0 +1,148 @@
+<div class="container mt-4">
+    <h2>Dar de Alta un Evento</h2>
+    <form [formGroup]="eventoForm" (ngSubmit)="onSubmit()">
+      
+      <!-- Nombre -->
+      <div class="form-group mb-3">
+        <label for="nombre">Nombre del Evento</label>
+        <input
+          type="text"
+          id="nombre"
+          formControlName="nombre"
+          class="form-control"
+          [ngClass]="{'is-invalid': isInvalid('nombre')}"
+          placeholder="Introduce el nombre del evento"
+          required
+        />
+        <div *ngIf="isInvalid('nombre')" class="invalid-feedback">
+          El nombre es obligatorio.
+        </div>
+      </div>
+      
+      <!-- Descripción -->
+      <div class="form-group mb-3">
+        <label for="descripcion">Descripción</label>
+        <textarea
+          id="descripcion"
+          formControlName="descripcion"
+          class="form-control"
+          [ngClass]="{'is-invalid': isInvalid('descripcion')}"
+          placeholder="Descripción del evento"
+          required
+        ></textarea>
+        <div *ngIf="isInvalid('descripcion')" class="invalid-feedback">
+          La descripción es obligatoria.
+        </div>
+      </div>
+      
+      <!-- Género -->
+      <div class="form-group mb-3">
+        <label for="genero">Género</label>
+        <input
+          type="text"
+          id="genero"
+          formControlName="genero"
+          class="form-control"
+          [ngClass]="{'is-invalid': isInvalid('genero')}"
+          placeholder="Introduce el género del evento"
+          required
+        />
+        <div *ngIf="isInvalid('genero')" class="invalid-feedback">
+          El género es obligatorio.
+        </div>
+      </div>
+      
+      <!-- Fecha del Evento -->
+      <div class="form-group mb-3">
+        <label for="fechaEvento">Fecha y Hora del Evento</label>
+        <input
+          type="datetime-local"
+          id="fechaEvento"
+          formControlName="fechaEvento"
+          class="form-control"
+          [ngClass]="{'is-invalid': isInvalid('fechaEvento')}"
+          required
+        />
+        <div *ngIf="isInvalid('fechaEvento')" class="invalid-feedback">
+          La fecha y hora deben ser futuras.
+        </div>
+      </div>
+      
+      
+      <!-- Precio Mínimo -->
+      <div class="form-group mb-3">
+        <label for="precioMin">Precio Mínimo</label>
+        <input
+          type="number"
+          id="precioMin"
+          formControlName="precioMin"
+          class="form-control"
+          [ngClass]="{'is-invalid': isInvalid('precioMin')}"
+          placeholder="Introduce el precio mínimo"
+          min="0.01"
+          required
+        />
+        <div *ngIf="isInvalid('precioMin')" class="invalid-feedback">
+          El precio mínimo debe ser positivo.
+        </div>
+      </div>
+      
+      <!-- Precio Máximo -->
+      <div class="form-group mb-3">
+        <label for="precioMax">Precio Máximo</label>
+        <input
+          type="number"
+          id="precioMax"
+          formControlName="precioMax"
+          class="form-control"
+          [ngClass]="{'is-invalid': isInvalid('precioMax')}"
+          placeholder="Introduce el precio máximo"
+          min="0.01"
+          required
+        />
+        <div *ngIf="isInvalid('precioMax')" class="invalid-feedback">
+          El precio máximo debe ser positivo.
+        </div>
+      </div>
+      
+      <!-- Localidad -->
+      <div class="form-group mb-3">
+        <label for="localidad">Localidad</label>
+        <input
+          type="text"
+          id="localidad"
+          formControlName="localidad"
+          class="form-control"
+          [ngClass]="{'is-invalid': isInvalid('localidad')}"
+          placeholder="Introduce la localidad"
+          required
+        />
+        <div *ngIf="isInvalid('localidad')" class="invalid-feedback">
+          La localidad es obligatoria.
+        </div>
+      </div>
+      
+      <!-- Recinto -->
+      <div class="form-group mb-3">
+        <label for="recinto">Recinto</label>
+        <input
+          type="text"
+          id="recinto"
+          formControlName="recinto"
+          class="form-control"
+          [ngClass]="{'is-invalid': isInvalid('recinto')}"
+          placeholder="Introduce el recinto"
+          required
+        />
+        <div *ngIf="isInvalid('recinto')" class="invalid-feedback">
+          El recinto es obligatorio.
+        </div>
+      </div>
+      
+      <!-- Botón de Enviar -->
+      <button type="submit" class="btn btn-primary" [disabled]="eventoForm.invalid">
+        Guardar Evento
+      </button>
+    </form>
+  </div>
+  

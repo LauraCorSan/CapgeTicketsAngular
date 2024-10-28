@@ -14,6 +14,8 @@ import { EventoServiceService } from './evento-service.service';
 import { ModificarEventoComponent } from './components/modificar-evento/modificar-evento.component';
 import { DarAltaEventoComponent } from './components/dar-alta-evento/dar-alta-evento.component';
 import { VerDetallesEventoComponent } from './components/ver-detalles-evento/ver-detalles-evento.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { VerDetallesEventoComponent } from './components/ver-detalles-evento/ver
     HttpClientModule,
     FormsModule,
     MatDialogModule,
+    ReactiveFormsModule
+
 
   ],
   providers: [

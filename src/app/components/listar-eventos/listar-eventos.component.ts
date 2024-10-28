@@ -27,10 +27,10 @@ export class ListarEventosComponent implements OnInit{
     });
   }
   deleteEvento(evento: Evento): void {
-    /*const dialogRef = this.dialog.open(DeleteDialogComponent);
+    const dialogRef = this.dialog.open(DeleteDialogComponent);
   
     dialogRef.afterClosed().subscribe(result => {
-      if (result) {*/
+      if (result) {
         this.eventoService.deleteEvento(evento).subscribe(
           (data) => {
             this.eventos = this.eventos.filter((e) => e !== evento);
@@ -39,8 +39,10 @@ export class ListarEventosComponent implements OnInit{
             console.error('Error al eliminar el evento:', error);
           }
         );
-      /*}
-    });*/
+      }
+    });
+
+
 
     
   }

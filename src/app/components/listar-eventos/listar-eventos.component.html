@@ -1,6 +1,9 @@
 <div class="col-md-12 p-2">
-    <button type="button" class="btn btn-primary btn-sm" ><i class="fa fa-save"></i> Nuevo evento</button>
-    <table class="table mt-2 table-bordered">
+    <button type="button" class="btn btn-primary btn-sm" [routerLink]="['/add']">
+        <i class="fa fa-save"></i> Nuevo evento
+      </button>
+     
+          <table class="table mt-2 table-bordered">
         <thead class="table-primary">
           <tr>
             <th>ID</th>
@@ -19,9 +22,9 @@
                     <i class="fa fa-pencil"></i>
                 </button>
                 &nbsp;
-                <button type="button" class="btn btn-primary btn-sm" >
-                    <i class="fa fa-eye"></i>
-                </button>
+                <a [routerLink]="['/detalle-evento', item.id]" class="btn btn-primary btn-sm">
+                  <i class="fa fa-eye"></i> 
+                </a>
                 &nbsp;
 
                 <button type="button" class="btn btn-danger btn-sm" (click)="deleteEvento(item)" >

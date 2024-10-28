@@ -4,21 +4,26 @@ import { Observable } from 'rxjs';
 import { Evento } from './model/evento';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
 export class EventoServiceService {
+  url = 'http://localhost:8080/evento/';
 
-    url = 'http://localhost:8080/evento/';
-  
-    constructor(private httpClient: HttpClient) {}
-  
-    public getEventos(): Observable<Evento[]>{
+  constructor(private httpClient: HttpClient) {}
+
+  public getEventos(): Observable<Evento[]> {
     return this.httpClient.get<Evento[]>(this.url + 'listarEventos');
-    }
+  }
 
-    public deleteEvento(evento: Evento) : Observable<any> {
-      return this.httpClient.delete<any>(this.url + 'eliminar/' + evento.id);
-    }
+  public deleteEvento(evento: Evento): Observable<any> {
+    return this.httpClient.delete<any>(this.url + 'eliminar/' + evento.id);
+  }
 
+  public addEvento(evento: Evento) {
+    return this.httpClient.post<Evento>(this.url + 'aniadir', evento);
+  }
+
+  getDetalleEvento(id: number): Observable<Evento> {
+    return this.httpClient.get<Evento>(this.url + id); 
+  }
 }
