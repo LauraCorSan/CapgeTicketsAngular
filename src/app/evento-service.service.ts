@@ -29,7 +29,7 @@ export class EventoServiceService {
     }
   
     public updateEvento(evento: Evento): Observable<Evento> {
-      return this.httpClient.put<Evento>(`${this.url}${evento.id}`, evento);
-    }
+    return this.httpClient.put<Evento>(`${this.url}`+ 'modificar/' +`${evento.id}`, evento);
+  }
 
 }

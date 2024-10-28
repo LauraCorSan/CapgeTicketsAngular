@@ -99,11 +99,9 @@ export class ModificarEventoComponent implements OnInit {
     this.eventoService.updateEvento(eventoActualizado).subscribe(
       (response: Evento) => {
         console.log("Evento actualizado con éxito", response);
-        this.router.navigate(['/ruta-de-destino']);
+        this.router.navigate(['/']);
       },
-      (error: any) => {
-        console.error("Error al actualizar el evento", error);
-      }
+     
     );
   }
   
