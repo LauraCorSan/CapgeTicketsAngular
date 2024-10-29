@@ -146,11 +146,13 @@
     </div>
    
     <!-- Botón de Enviar -->
-    <button type="submit" class="btn btn-primary" [disabled]="eventoForm.invalid">
-      Guardar Evento
-    </button>
-    <button type="button" class="btn btn-secondary" (click)="volver()">
-      Volver a Lista de Eventos
-    </button>
+    <div class="d-flex justify-content-between mt-3">
+      <button type="button" class="btn btn-secondary" (click)="volver()">
+        Volver a Listado
+      </button>
+      <button type="submit" class="btn btn-primary" [disabled]="!eventoForm.valid">
+        Guardar Evento
+      </button>
+    </div>
   </form>
 </div>  

@@ -34,11 +34,11 @@
       <input type="text" id="recinto" formControlName="recinto" class="form-control" />
     </div>
     <div class="d-flex justify-content-between mt-3">
-      <button type="submit" class="btn btn-primary" [disabled]="!eventoForm.valid">
-        Guardar Cambios
-      </button>
       <button type="button" class="btn btn-secondary" (click)="volver()">
         Volver a Listado
+      </button>
+      <button type="submit" class="btn btn-primary" [disabled]="!eventoForm.valid">
+        Guardar Cambios
       </button>
     </div>
   </form>
